@@ -50,7 +50,7 @@ Having all 8 variables converted to a raster format, the next stage involved mer
 
 The present project uses different layers of data made available by the Department of Environment, Land, Water and Planning (DELWP) (Table 2). DELWP datasets include Vicmap Features of Interest (Country Fire Authority Fire stations), Vicmap Vegetation (tree density), bushfire prone areas (BPA), historical records of fire, elevation, and road networks (as part of Vicmap Transport).
 
-<img width="890" alt="image" src="https://user-images.githubusercontent.com/55724420/141415879-af9e98f1-5775-4371-96ee-6e480bb5d00a.png">
+<img width="790" align= "center" alt="image" src="https://user-images.githubusercontent.com/55724420/141415879-af9e98f1-5775-4371-96ee-6e480bb5d00a.png">
 
 
 ### Response Time <a name='RT'></a>
