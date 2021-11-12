@@ -50,7 +50,7 @@ Having all 8 variables converted to a raster format, the next stage involved mer
 
 The present project uses different layers of data made available by the Department of Environment, Land, Water and Planning (DELWP) (Table 2). DELWP datasets include Vicmap Features of Interest (Country Fire Authority Fire stations), Vicmap Vegetation (tree density), bushfire prone areas (BPA), historical records of fire, elevation, and road networks (as part of Vicmap Transport).
 
-<img width="790" align= "center" alt="image" src="https://user-images.githubusercontent.com/55724420/141415879-af9e98f1-5775-4371-96ee-6e480bb5d00a.png">
+<img align="center" width="790" alt="image" src="https://user-images.githubusercontent.com/55724420/141415879-af9e98f1-5775-4371-96ee-6e480bb5d00a.png">
 
 
 ### Response Time <a name='RT'></a>
@@ -59,13 +59,13 @@ A key intuitive element to define an index of service coverage is the ability of
 
 The dataset for CFA stations in Victoria is a point map. It contains all 1,200 fire stations scattered across the state from which 257 correspond to Wellington Shire. The CFA fire stations found in Wellington are predominantly located at the southern end of the region. This is due to the largely inaccessible terrain of the Great Dividing Range, or Victorian high country, characterised by dense vegetation, steep slopes, and severe weather (Lunt et al., 2010).
 
- <img width="660" alt="image" src="https://user-images.githubusercontent.com/55724420/141416550-55752f28-19b8-40c4-98d7-98a44a39b441.png">
+ <img align="center" width="660" alt="image" src="https://user-images.githubusercontent.com/55724420/141416550-55752f28-19b8-40c4-98d7-98a44a39b441.png">
 
 Service areas are obtained with ArGIS Pro's Service Area Tool which creates polygons that cover roads within the cutoff distance and the areas completely surrounded by reached roads. In order to set a correct cutoff distance, the present study considers the average speed limit in the state of Victoria of 50km/h and the additional margin of up to 20km/h on the top of the speed limit conceded to CFA vehicles under emergencies by the Road Safety Road Rules 2017. The time response, the average speed limit, and the special considerations for CFA vehicles make the cutoff distance for serviced areas 17 km. In this section, there is no contemplation of transit or any probability distribution linked to the flow of vehicles in the road network.
 
 Service areas are obtained with ArGIS Pro's Service Area Tool which creates polygons that cover roads within the cutoff distance and the areas completely surrounded by reached roads. In order to set a correct cutoff distance, the present study considers the average speed limit in the state of Victoria of 50km/h and the additional margin of up to 20km/h on the top of the speed limit conceded to CFA vehicles under emergencies by the Road Safety Road Rules 2017. The time response, the average speed limit, and the special considerations for CFA vehicles make the cutoff distance for serviced areas 17 km. In this section, there is no contemplation of transit or any probability distribution linked to the flow of vehicles in the road network.
 
-<img width="641" alt="image" src="https://user-images.githubusercontent.com/55724420/141416997-3b54ecda-2f00-47aa-89c8-0a7a4b39ed15.png">
+<img align="center" width="641" alt="image" src="https://user-images.githubusercontent.com/55724420/141416997-3b54ecda-2f00-47aa-89c8-0a7a4b39ed15.png">
 
 ### BPA <a name='BPA'></a>
 
@@ -80,7 +80,7 @@ Consideration of the land-use patterns is of high significance as the need for f
 
 The procedure to create a raster map from the Land Use polygon map is as follows. A new attribute Land_Use has been created that utilizes the values given in the LU_1 attribute for classification into one of three categories: dwelling, workspace, and natural space through the Calculate Field tool. Codes 1 and 2 are mapped to dwellings, codes 3, 6, and 7 are mapped to workspaces, and codes 4, 5, 8, 9, U and V are mapped to natural spaces. The symbology for this layer is changed to Unique values using the Land_Use field in order to visually distinguish between the three categories. Finally, the layer is converted to a raster layer Feature_LAND1 by using ArcGis Pro's Feature to Raster tool.
 
-<img width="536" alt="image" src="https://user-images.githubusercontent.com/55724420/141417484-a9dea590-af75-43c8-a9e2-ecb76ebb8d7a.png">
+<img align="center" width="536" alt="image" src="https://user-images.githubusercontent.com/55724420/141417484-a9dea590-af75-43c8-a9e2-ecb76ebb8d7a.png">
 
 
 ### Population Projection <a name='PP'></a>
@@ -89,7 +89,7 @@ There is a greater need for fire stations to provide an efficient service in den
 
 The procedure to create a raster map from the Population Projection polygon map is as follows. As the initial step, the EXTRACT_POLYGON layer has been used as the mask for the POPULATION_2016 layer to extract only the features that correspond to Wellington by using the Clip tool. Three new fields have been created for analysis. The creation of the Total_Area field, containing information about the total area covered by each local government area, is carried out by using the Calculate Geometry tool and setting the metric to be used to square kilometres. The PD_2020 field, which should contain information about the current population density in 2020 for each local government area, has been created by using the Calculate Field tool with the formula tpop_2020 / Total_Area. Similarly, the PD_2020 field, which should contain information about the projected population density in 2030 for each local government area, has been created by using the Calculate Field tool with the formula tpop_2030 / Total_Area. Finally, the symbology for this layer is changed to Graduated colors using the PD_2030 field in order to visually distinguish between the different population density ranges.
 
-<img width="476" alt="image" src="https://user-images.githubusercontent.com/55724420/141417946-499d9d25-f420-457d-a350-d9eeb75a913a.png">
+<img align="center" width="476" alt="image" src="https://user-images.githubusercontent.com/55724420/141417946-499d9d25-f420-457d-a350-d9eeb75a913a.png">
 
 ### Historical Records of Fire <a name='HRF'></a>
 
@@ -97,7 +97,7 @@ South-eastern Victoria, including Wellington shire, has a long history of fire. 
 
 The dataset consisted of a collection of polygons that mark areas where bushfires have occurred across south-eastern Victoria. The pre-processing steps to calculate historical records of fire within Wellington shire are as follows. Firstly, the data containing fire records was cropped to fit only the area of Wellington shire to create a new feature layer. The new layer - historical fire records only within Wellington shire between 1903 and 2020 - was then split into three categories to represent the three most recent decades. These were: 1) 1990-1999, 2) 2000-2009, and 3) 2010- 2020. The three feature layers were then converted to rasters with a feature to raster conversion. The next step involved merging the three raster layers to a mosaic raster layer. This was done in order to visualise which areas within Wellington shire have experienced 1, 2, or 3 bushfires in different decades over the past 30 years. The resulting raster map showed the upper and lower limits of each range as the sum of the years when the bushfire happened.
 
-<img width="580" alt="image" src="https://user-images.githubusercontent.com/55724420/141418231-131ddd26-1428-4f67-a001-5bcc475c4be7.png">
+<img align="center" width="580" alt="image" src="https://user-images.githubusercontent.com/55724420/141418231-131ddd26-1428-4f67-a001-5bcc475c4be7.png">
  
 ### Vegetation <a name='VEG'></a>
 
@@ -105,7 +105,7 @@ High-density vegetation is a known fuel hazard for bushfires in south-eastern Vi
 
  The first step is to obtain polygons that show the distribution of vegetation across Wellington shire. A vegetation dataset was sourced from the DELWP which contained tree density data with three 1) dense vegetation, 2) medium density vegetation, and 3) scattered density vegetation. The data is derived from the presence/absence of tree cover, which has been determined by visual interpretation, digital classification methods, and SPOT panchromatic imagery (10m pixels). 
 
-<img width="422" alt="image" src="https://user-images.githubusercontent.com/55724420/141418536-d24480f2-0cd0-49a1-8fcc-b58b1a0fd18b.png">
+<img align="center" width="422" alt="image" src="https://user-images.githubusercontent.com/55724420/141418536-d24480f2-0cd0-49a1-8fcc-b58b1a0fd18b.png">
 
 ### Slope <a name='slope'></a>
 
@@ -113,14 +113,14 @@ Topography is one of the key features that determine the behaviour of fire in so
 
 Topography data for the state of Victoria was sourced from the DELWP. The data represents the footprint of topographical relief features which are represented by contour lines. The main dataset used in the series was contour 1:25,000, which represented Victoria’s elevation. The pre- processing steps to calculate slope, using the contour dataset, for Wellington shire are as follows. The feature layer was then converted to a raster layer. This was achieved with the feature to raster conversion tool, with the field value set to ‘altitude’. This raster layer showed the elevation of Wellington shire from sea level (0 meters) to much higher elevations in the Victorian High Country (<1,720 meters) in the far north of the shire. Using the new raster layer, the slope of Wellington Shire could be calculated using the slope 3D analyst tool. Then, the primary symbology of the raster layer was set to classify with an interval size of 2. The final step involved merging the raster slope layer with a raster generated from the mask of Wellington shire. This created a mosaic raster layer that shows elevation from <2 degrees to <26 degrees within Wellington shire.
 
-<img width="465" alt="image" src="https://user-images.githubusercontent.com/55724420/141418991-8f31b17c-d5ce-4869-b4da-de6a7bd40a42.png">
+<img align="center" width="465" alt="image" src="https://user-images.githubusercontent.com/55724420/141418991-8f31b17c-d5ce-4869-b4da-de6a7bd40a42.png">
 
   
 ## Calculation of Index <a name='index'></a>
 
 At this point, there are 7 negatively correlated variables and 1 positively correlated 8th variable within a framework of an unsupervised regression. We do not possess training results that can guide the learning of the weights of each variable, instead a naive approach is proposed. Under the premise that the service area is considered to be the baseline of the coverage index, we seek to model the degree of erosion that the negatively correlated variables have on it. The resulting linear regression-like model is as follows:
 
-<img width="787" alt="image" src="https://user-images.githubusercontent.com/55724420/141419154-f573d6cd-fd2a-4c0c-ad3d-2605809d2496.png">
+<img align="center" width="787" alt="image" src="https://user-images.githubusercontent.com/55724420/141419154-f573d6cd-fd2a-4c0c-ad3d-2605809d2496.png">
 
 Given that all variables have the same value range, by multiplying the weight of the baseline definition of coverage by 7 we set a border that separates negative index values from positive values. Negative values are interpreted as a baseline service area eroded by deterrents to the extent that the area of interest is no longer considered serviced. A positive value in the index can be interpreted as with a prevalent influence of the Service Area even under the consideration of other impediments.
 
@@ -128,9 +128,9 @@ In order to guarantee that all variables are with the same value range, they mus
 
 The maps of BPA and land use are an exception to the standard homogenous reclassification process. Both of these variables present the same anomaly, they allocate one category to most of the territory of Wellington. Specifically, the great majority of the shire is labeled as bushfire prone and natural space. The first label, as stated previously, carries administrative meaning while the second label does have a great impact on the definition of priorities under CFA’s mission. For this reason, Land use has a raster-value range from 1 to 8 just like the rest of the maps but with non- equidistant categories to allow dwellings and workspaces to claim importance over other spaces. On the other hand, BPA raster values are the only exception to the 1-to-8 range; they are reclassified to have the value of 1 and 2 as they prove to be less descriptive and therefore should have less impact than, for example, records of past fires.
 
-<img width="822" alt="image" src="https://user-images.githubusercontent.com/55724420/141419282-3036d802-54db-4023-bca4-159ab79e2e31.png">
+<img align="center" width="822" alt="image" src="https://user-images.githubusercontent.com/55724420/141419282-3036d802-54db-4023-bca4-159ab79e2e31.png">
 
-<img width="822" alt="image" src="https://user-images.githubusercontent.com/55724420/141419298-70a79f36-7822-42b4-952c-b03e1764707d.png">
+<img align="center" width="822" alt="image" src="https://user-images.githubusercontent.com/55724420/141419298-70a79f36-7822-42b4-952c-b03e1764707d.png">
 
 ## Conclusions <a name='conclusions'></a>
 
@@ -138,11 +138,11 @@ The final raster map shows the level of coverage of service provided by the CFA 
 
 The immediate output of the analysis described in the present study is not a direct solution to the problem, that is the location for new CFA stations to maximise coverage. Even though the index of coverage is not a location it offers valuable information to respond to the research question with versatility. The process to determine the most viable location for a new station from a subjective perspective is bound to involve several other human and administrative factors, such as the number of volunteers available in the perimeter, costs, available land, personal gain, and other circumstantial aspects. By providing a map with a general overview of what is the situation of Wellington in terms of coverage we allow the stakeholders to integrate their own concerns into the decision-making process. It is important to highlight that location for new CFA stations must be situated on the existing roads or otherwise include extensions to the network in order to update the analysis.
 
-<img width="806" alt="image" src="https://user-images.githubusercontent.com/55724420/141419749-154b4024-4926-46bb-9ede-606cee2debb6.png">
+<img align="center" width="806" alt="image" src="https://user-images.githubusercontent.com/55724420/141419749-154b4024-4926-46bb-9ede-606cee2debb6.png">
 
 It can be observed from the following histogram that there is a tendency towards extremes in the raster map generated from the index. There is a peak of over 4,000 raster values in the negative spectrum of the graph as well as a peak in the positive spectrum of over 4,000 raster values. From the index raster map, we can confirm that large clustered areas are unserviced and they happen to be so by a great deal of erosion of the Service Area or directly for insufficient reach under the cutoff time response. On the other hand, the presence of a large number of positive raster cells is an expected result of the immediate vicinity of the CFA stations. Only in rare circumstances, a given area within a short distance to a CFA station would be unserviced; that would happen due to extremely deterring effects of high slope, dense vegetation, high population density, among others.
 
-<img width="828" alt="image" src="https://user-images.githubusercontent.com/55724420/141419950-e1de159f-c71b-4379-a590-53d5e4ac9437.png">
+<img align="center" width="828" alt="image" src="https://user-images.githubusercontent.com/55724420/141419950-e1de159f-c71b-4379-a590-53d5e4ac9437.png">
 
 It can be observed from the following histogram that there is a tendency towards extremes in the raster map generated from the index. There is a peak of over 4,000 raster values in the negative spectrum of the graph as well as a peak in the positive spectrum of over 4,000 raster values. From the index raster map, we can confirm that large clustered areas are unserviced and they happen to be so by a great deal of erosion of the Service Area or directly for insufficient reach under the cutoff time response. On the other hand, the presence of a large number of positive raster cells is an expected result of the immediate vicinity of the CFA stations. Only in rare circumstances, a given area within a short distance to a CFA station would be unserviced; that would happen due to extremely deterring effects of high slope, dense vegetation, high population density, among others.
 
