@@ -118,6 +118,68 @@ Topography data for the state of Victoria was sourced from the DELWP. The data r
   
 ## Calculation of Index <a name='index'></a>
 
+At this point, there are 7 negatively correlated variables and 1 positively correlated 8th variable within a framework of an unsupervised regression. We do not possess training results that can guide the learning of the weights of each variable, instead a naive approach is proposed. Under the premise that the service area is considered to be the baseline of the coverage index, we seek to model the degree of erosion that the negatively correlated variables have on it. The resulting linear regression-like model is as follows:
+
+<img width="787" alt="image" src="https://user-images.githubusercontent.com/55724420/141419154-f573d6cd-fd2a-4c0c-ad3d-2605809d2496.png">
+
+Given that all variables have the same value range, by multiplying the weight of the baseline definition of coverage by 7 we set a border that separates negative index values from positive values. Negative values are interpreted as a baseline service area eroded by deterrents to the extent that the area of interest is no longer considered serviced. A positive value in the index can be interpreted as with a prevalent influence of the Service Area even under the consideration of other impediments.
+
+In order to guarantee that all variables are with the same value range, they must be reclassified. Three of the variables are continuous and can be reclassified in any number of bands, 4 show discrete values in 4 categories each, and the last variable shows 2 categorical values (Table 2). The simplest reclassification process would aim for the least common multiple of 4 but in order to increase granularity, this number is doubled to 8. 
+
+The maps of BPA and land use are an exception to the standard homogenous reclassification process. Both of these variables present the same anomaly, they allocate one category to most of the territory of Wellington. Specifically, the great majority of the shire is labeled as bushfire prone and natural space. The first label, as stated previously, carries administrative meaning while the second label does have a great impact on the definition of priorities under CFA’s mission. For this reason, Land use has a raster-value range from 1 to 8 just like the rest of the maps but with non- equidistant categories to allow dwellings and workspaces to claim importance over other spaces. On the other hand, BPA raster values are the only exception to the 1-to-8 range; they are reclassified to have the value of 1 and 2 as they prove to be less descriptive and therefore should have less impact than, for example, records of past fires.
+
+<img width="822" alt="image" src="https://user-images.githubusercontent.com/55724420/141419282-3036d802-54db-4023-bca4-159ab79e2e31.png">
+
+<img width="822" alt="image" src="https://user-images.githubusercontent.com/55724420/141419298-70a79f36-7822-42b4-952c-b03e1764707d.png">
+
 ## Conclusions <a name='conclusions'></a>
 
+The final raster map shows the level of coverage of service provided by the CFA across Wellington Shire where negative raster values represent unserviced areas and positive values mark serviced areas. The service area has been modeled using a narrow range of static variables (service area, BPA, tree density, fire records, slope, land use, and population projections). The index values in the raster map are split into 8 bands to continue with the logic of the variables’ ranges reclassified to 8 discrete values.
+
+The immediate output of the analysis described in the present study is not a direct solution to the problem, that is the location for new CFA stations to maximise coverage. Even though the index of coverage is not a location it offers valuable information to respond to the research question with versatility. The process to determine the most viable location for a new station from a subjective perspective is bound to involve several other human and administrative factors, such as the number of volunteers available in the perimeter, costs, available land, personal gain, and other circumstantial aspects. By providing a map with a general overview of what is the situation of Wellington in terms of coverage we allow the stakeholders to integrate their own concerns into the decision-making process. It is important to highlight that location for new CFA stations must be situated on the existing roads or otherwise include extensions to the network in order to update the analysis.
+
+<img width="806" alt="image" src="https://user-images.githubusercontent.com/55724420/141419749-154b4024-4926-46bb-9ede-606cee2debb6.png">
+
+It can be observed from the following histogram that there is a tendency towards extremes in the raster map generated from the index. There is a peak of over 4,000 raster values in the negative spectrum of the graph as well as a peak in the positive spectrum of over 4,000 raster values. From the index raster map, we can confirm that large clustered areas are unserviced and they happen to be so by a great deal of erosion of the Service Area or directly for insufficient reach under the cutoff time response. On the other hand, the presence of a large number of positive raster cells is an expected result of the immediate vicinity of the CFA stations. Only in rare circumstances, a given area within a short distance to a CFA station would be unserviced; that would happen due to extremely deterring effects of high slope, dense vegetation, high population density, among others.
+
+<img width="828" alt="image" src="https://user-images.githubusercontent.com/55724420/141419950-e1de159f-c71b-4379-a590-53d5e4ac9437.png">
+
+It can be observed from the following histogram that there is a tendency towards extremes in the raster map generated from the index. There is a peak of over 4,000 raster values in the negative spectrum of the graph as well as a peak in the positive spectrum of over 4,000 raster values. From the index raster map, we can confirm that large clustered areas are unserviced and they happen to be so by a great deal of erosion of the Service Area or directly for insufficient reach under the cutoff time response. On the other hand, the presence of a large number of positive raster cells is an expected result of the immediate vicinity of the CFA stations. Only in rare circumstances, a given area within a short distance to a CFA station would be unserviced; that would happen due to extremely deterring effects of high slope, dense vegetation, high population density, among others.
+
+Based on the final index map, which shows the level of coverage of service provided by the CFA across Wellington Shire, we have made the following recommendations about building new fire stations to the clients (the Department of Environment, Land, Water and Planning and the CFA of Wellington Shire).
+
+### 1. Build a new CFA station in northern areas of Wellington shire where there is currently little service coverage.
+
+This area has the least service coverage despite experiencing the greatest number of bushfires in the last three decades (Figure 13). Fortunately, the raster cells that show areas with less coverage are all clustered, which means that the presence of one station in this area can turn a significantly large and unserviced number of raster cells to the status of serviced, changing the distribution of the histogram of raster-value counts (figure 21). Building a new fire station could benefit communities that reside in this area because it will increase service coverage and firefighting facilities to this high-risk area that is currently vulnerable to bushfires. If this were to happen, the resulting index map might show a greater service coverage across the area, or small sections of the area, despite being in a densely vegetated and steep environment.
+
+However, building a new fire station to the north could be an issue because of future climate change. Bushfires are predicted to be more intense and frequent in the future, so there is a risk that a new fire station would be destroyed. Moreover, the Victorian High Country has unpredictable weather conditions, areas characterised by steep slopes and dense vegetation which renders most of the area inaccessible. There are also fewer roads in this region, as seen in Figure 1, therefore building a new fire station doesn't necessarily mean greater service coverage for this area.
+
+### 2. Choosing a south-eastern location for a new fire station.
+
+A new fire station could be built in the south-east of Wellington shire. As seen in Figure 3, this area has a number of raster cells that are unserviced despite the location having hardly any historical records of fire (last 3 decades), does not have much dense vegetation (Figure 15), and has a slope <2 degrees (Figure 17). The south-eastern area also appears to have greater dwellings and workplaces (Figure 5). Thus, a new fire station could increase the service area in this particular region, making it a safer community.
+
+### 3. Focusing on building more sealed road networks into the northern section of Wellington shire, rather than building new fire stations
+
+Rather than focusing on building new fire stations in the northern section of the shire, there could be more of a focus on building road networks for easier access into the hazardous region. Additionally, more fire stations could be built in the middle-most section of the shire where there is currently more service coverage. Any road networks that are extended from these heavily serviced areas into the high country may have a positive influence on coverage.
+
+Once again, many of the northern sections of the shire are inaccessible. Building new roads in a pristine environment is also unsustainable and can disrupt biodiversity. The Road network extensions are also hindered by the steep slopes of the High Country, and would require explosive devices in order to form flat, even road surfaces.
+
 ## References <a name='Ref'></a>
+
+CFA’s Service Delivery Standards (SDS) CLASS OF HAZARD RESPONSE TIME DEFINITIONS. (n.d.). Retrieved October 29, 2020, from https://s3.ap-southeast- 2.amazonaws.com/hdp.au.prod.app.vic-engage.files/5814/8609/8781/Attachment_- _UFU_Submission_to_FSR_-_ANNEXURE_26.PDF
+CSIRO. (2009). Bushfires in Australia: Prepared for the 2009 senate inquiry into bushfires in Australia. CSIRO, 9(355), 1-31.
+Department of Agriculture, Water and the Environment. (n.d.). Department of Agriculture, Water and the Environment. Retrieved from: https://www.environment.gov.au/epbc/publications/factsheet- bushfire-management-and-national-environment-law
+Enright, N. J., & Fontaine, J. B. (2014). Climate change and the management of fire-prone vegetation in southwest and southeast Australia. Geographical Research, 52(1), 34-44.
+Filkov, A. I., Ngo, T., Matthews, S., Telfer, S., & Penman, T. D. (2020). Impact of Australia’s catastrophic 2019/20 bushfire season on communities and environment. Retrospective analysis and current trends. Journal of safety and resilience, 1, 44-56.
+Gould, J., & Sullivan, A. (2004). Fuel hazard development. Client Report No. 1468, CSIRO Forestry and Forest Products, Canberra, ACT.
+IPCC. (2019). In: Climate Change and Land: an IPCC special report on climate change, desertification, land degradation, sustainable land management, food security, and greenhouse gas fluxes in terrestrial ecosystems [P.R. Shukla, J. Skea, E. Calvo Buendia, V. Masson-Delmotte, H.-O. Pörtner, D. C. Roberts, P. Zhai, R. Slade, S. Connors, R. van Diemen, M. Ferrat, E. Haughey, S. Luz, S. Neogi, M. Pathak, J. Petzold, J. Portugal Pereira, P. Vyas, E. Huntley, K. Kissick, M, Belkacemi, J. Malley, (eds.)]. In press.
+   Gould, J. S., Cheney, N. P., Ellis, P. F., Knight, I. K., McCaw, W. L., & Sullivan A. L. (2009).
+ Project Vesta: fire in dry eucalypt forest. Canberra, ACT: CSIRO Publishing.
+Lunt, I. D., Winsemius, L. M., McDonald, S. P., Morgan, J. W., & Dehaan, R. L. (2010). How
+widespread is woody plant encroachment in temperate Australia? Changes in woody vegetation cover in
+lowland woodland and coastal ecosystems in Victoria from 1989 to 2005. Journal of Biogeography,
+37(4), 722–732. doi:10.1111/J.1365-2699.2009.02255.X
+ KC, K., Corcoran, J., & Chhetri, P. (2018). Spatial optimisation of fire service coverage: a case
+ study of Brisbane, Australia. Geographical Research, 56(3), 270–284.
+ Stephenson, C. (2010). The impacts, losses and benefits sustained from five severe bushfires in
+ 
