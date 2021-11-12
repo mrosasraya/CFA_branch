@@ -167,19 +167,22 @@ Once again, many of the northern sections of the shire are inaccessible. Buildin
 ## References <a name='Ref'></a>
 
 CFA’s Service Delivery Standards (SDS) CLASS OF HAZARD RESPONSE TIME DEFINITIONS. (n.d.). Retrieved October 29, 2020, from https://s3.ap-southeast- 2.amazonaws.com/hdp.au.prod.app.vic-engage.files/5814/8609/8781/Attachment_- _UFU_Submission_to_FSR_-_ANNEXURE_26.PDF
+
 CSIRO. (2009). Bushfires in Australia: Prepared for the 2009 senate inquiry into bushfires in Australia. CSIRO, 9(355), 1-31.
+
 Department of Agriculture, Water and the Environment. (n.d.). Department of Agriculture, Water and the Environment. Retrieved from: https://www.environment.gov.au/epbc/publications/factsheet- bushfire-management-and-national-environment-law
+
 Enright, N. J., & Fontaine, J. B. (2014). Climate change and the management of fire-prone vegetation in southwest and southeast Australia. Geographical Research, 52(1), 34-44.
+
 Filkov, A. I., Ngo, T., Matthews, S., Telfer, S., & Penman, T. D. (2020). Impact of Australia’s catastrophic 2019/20 bushfire season on communities and environment. Retrospective analysis and current trends. Journal of safety and resilience, 1, 44-56.
+
 Gould, J., & Sullivan, A. (2004). Fuel hazard development. Client Report No. 1468, CSIRO Forestry and Forest Products, Canberra, ACT.
+
 IPCC. (2019). In: Climate Change and Land: an IPCC special report on climate change, desertification, land degradation, sustainable land management, food security, and greenhouse gas fluxes in terrestrial ecosystems [P.R. Shukla, J. Skea, E. Calvo Buendia, V. Masson-Delmotte, H.-O. Pörtner, D. C. Roberts, P. Zhai, R. Slade, S. Connors, R. van Diemen, M. Ferrat, E. Haughey, S. Luz, S. Neogi, M. Pathak, J. Petzold, J. Portugal Pereira, P. Vyas, E. Huntley, K. Kissick, M, Belkacemi, J. Malley, (eds.)]. In press.
-   Gould, J. S., Cheney, N. P., Ellis, P. F., Knight, I. K., McCaw, W. L., & Sullivan A. L. (2009).
- Project Vesta: fire in dry eucalypt forest. Canberra, ACT: CSIRO Publishing.
-Lunt, I. D., Winsemius, L. M., McDonald, S. P., Morgan, J. W., & Dehaan, R. L. (2010). How
-widespread is woody plant encroachment in temperate Australia? Changes in woody vegetation cover in
-lowland woodland and coastal ecosystems in Victoria from 1989 to 2005. Journal of Biogeography,
-37(4), 722–732. doi:10.1111/J.1365-2699.2009.02255.X
- KC, K., Corcoran, J., & Chhetri, P. (2018). Spatial optimisation of fire service coverage: a case
- study of Brisbane, Australia. Geographical Research, 56(3), 270–284.
- Stephenson, C. (2010). The impacts, losses and benefits sustained from five severe bushfires in
+
+Lunt, I. D., Winsemius, L. M., McDonald, S. P., Morgan, J. W., & Dehaan, R. L. (2010). How widespread is woody plant encroachment in temperate Australia? Changes in woody vegetation cover in lowland woodland and coastal ecosystems in Victoria from 1989 to 2005. Journal of Biogeography, 37(4), 722–732. doi:10.1111/J.1365-2699.2009.02255.X
+
+ KC, K., Corcoran, J., & Chhetri, P. (2018). Spatial optimisation of fire service coverage: a case study of Brisbane, Australia. Geographical Research, 56(3), 270–284.
+ 
+ Stephenson, C. (2010). The impacts, losses and benefits sustained from five severe bushfires in  south-eastern Australia. Bushfire cooperative research centre, 88, 1-106.
  
