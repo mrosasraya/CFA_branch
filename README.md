@@ -65,7 +65,7 @@ Service areas are obtained with ArGIS Pro's Service Area Tool which creates poly
 
 Service areas are obtained with ArGIS Pro's Service Area Tool which creates polygons that cover roads within the cutoff distance and the areas completely surrounded by reached roads. In order to set a correct cutoff distance, the present study considers the average speed limit in the state of Victoria of 50km/h and the additional margin of up to 20km/h on the top of the speed limit conceded to CFA vehicles under emergencies by the Road Safety Road Rules 2017. The time response, the average speed limit, and the special considerations for CFA vehicles make the cutoff distance for serviced areas 17 km. In this section, there is no contemplation of transit or any probability distribution linked to the flow of vehicles in the road network.
 
-<img align="center" width="641" alt="image" src="https://user-images.githubusercontent.com/55724420/141416997-3b54ecda-2f00-47aa-89c8-0a7a4b39ed15.png">
+<img align="center" width="660" alt="image" src="https://user-images.githubusercontent.com/55724420/141416997-3b54ecda-2f00-47aa-89c8-0a7a4b39ed15.png">
 
 ### BPA <a name='BPA'></a>
 
@@ -80,7 +80,7 @@ Consideration of the land-use patterns is of high significance as the need for f
 
 The procedure to create a raster map from the Land Use polygon map is as follows. A new attribute Land_Use has been created that utilizes the values given in the LU_1 attribute for classification into one of three categories: dwelling, workspace, and natural space through the Calculate Field tool. Codes 1 and 2 are mapped to dwellings, codes 3, 6, and 7 are mapped to workspaces, and codes 4, 5, 8, 9, U and V are mapped to natural spaces. The symbology for this layer is changed to Unique values using the Land_Use field in order to visually distinguish between the three categories. Finally, the layer is converted to a raster layer Feature_LAND1 by using ArcGis Pro's Feature to Raster tool.
 
-<img align="center" width="536" alt="image" src="https://user-images.githubusercontent.com/55724420/141417484-a9dea590-af75-43c8-a9e2-ecb76ebb8d7a.png">
+<img align="center" width="660" alt="image" src="https://user-images.githubusercontent.com/55724420/141417484-a9dea590-af75-43c8-a9e2-ecb76ebb8d7a.png">
 
 
 ### Population Projection <a name='PP'></a>
@@ -89,7 +89,7 @@ There is a greater need for fire stations to provide an efficient service in den
 
 The procedure to create a raster map from the Population Projection polygon map is as follows. As the initial step, the EXTRACT_POLYGON layer has been used as the mask for the POPULATION_2016 layer to extract only the features that correspond to Wellington by using the Clip tool. Three new fields have been created for analysis. The creation of the Total_Area field, containing information about the total area covered by each local government area, is carried out by using the Calculate Geometry tool and setting the metric to be used to square kilometres. The PD_2020 field, which should contain information about the current population density in 2020 for each local government area, has been created by using the Calculate Field tool with the formula tpop_2020 / Total_Area. Similarly, the PD_2020 field, which should contain information about the projected population density in 2030 for each local government area, has been created by using the Calculate Field tool with the formula tpop_2030 / Total_Area. Finally, the symbology for this layer is changed to Graduated colors using the PD_2030 field in order to visually distinguish between the different population density ranges.
 
-<img align="center" width="476" alt="image" src="https://user-images.githubusercontent.com/55724420/141417946-499d9d25-f420-457d-a350-d9eeb75a913a.png">
+<img align="center" width="660" alt="image" src="https://user-images.githubusercontent.com/55724420/141417946-499d9d25-f420-457d-a350-d9eeb75a913a.png">
 
 ### Historical Records of Fire <a name='HRF'></a>
 
@@ -97,7 +97,7 @@ South-eastern Victoria, including Wellington shire, has a long history of fire. 
 
 The dataset consisted of a collection of polygons that mark areas where bushfires have occurred across south-eastern Victoria. The pre-processing steps to calculate historical records of fire within Wellington shire are as follows. Firstly, the data containing fire records was cropped to fit only the area of Wellington shire to create a new feature layer. The new layer - historical fire records only within Wellington shire between 1903 and 2020 - was then split into three categories to represent the three most recent decades. These were: 1) 1990-1999, 2) 2000-2009, and 3) 2010- 2020. The three feature layers were then converted to rasters with a feature to raster conversion. The next step involved merging the three raster layers to a mosaic raster layer. This was done in order to visualise which areas within Wellington shire have experienced 1, 2, or 3 bushfires in different decades over the past 30 years. The resulting raster map showed the upper and lower limits of each range as the sum of the years when the bushfire happened.
 
-<img align="center" width="580" alt="image" src="https://user-images.githubusercontent.com/55724420/141418231-131ddd26-1428-4f67-a001-5bcc475c4be7.png">
+<img align="center" width="660" alt="image" src="https://user-images.githubusercontent.com/55724420/141418231-131ddd26-1428-4f67-a001-5bcc475c4be7.png">
  
 ### Vegetation <a name='VEG'></a>
 
@@ -105,7 +105,7 @@ High-density vegetation is a known fuel hazard for bushfires in south-eastern Vi
 
  The first step is to obtain polygons that show the distribution of vegetation across Wellington shire. A vegetation dataset was sourced from the DELWP which contained tree density data with three 1) dense vegetation, 2) medium density vegetation, and 3) scattered density vegetation. The data is derived from the presence/absence of tree cover, which has been determined by visual interpretation, digital classification methods, and SPOT panchromatic imagery (10m pixels). 
 
-<img align="center" width="422" alt="image" src="https://user-images.githubusercontent.com/55724420/141418536-d24480f2-0cd0-49a1-8fcc-b58b1a0fd18b.png">
+<img align="center" width="660" alt="image" src="https://user-images.githubusercontent.com/55724420/141418536-d24480f2-0cd0-49a1-8fcc-b58b1a0fd18b.png">
 
 ### Slope <a name='slope'></a>
 
@@ -113,7 +113,7 @@ Topography is one of the key features that determine the behaviour of fire in so
 
 Topography data for the state of Victoria was sourced from the DELWP. The data represents the footprint of topographical relief features which are represented by contour lines. The main dataset used in the series was contour 1:25,000, which represented Victoria’s elevation. The pre- processing steps to calculate slope, using the contour dataset, for Wellington shire are as follows. The feature layer was then converted to a raster layer. This was achieved with the feature to raster conversion tool, with the field value set to ‘altitude’. This raster layer showed the elevation of Wellington shire from sea level (0 meters) to much higher elevations in the Victorian High Country (<1,720 meters) in the far north of the shire. Using the new raster layer, the slope of Wellington Shire could be calculated using the slope 3D analyst tool. Then, the primary symbology of the raster layer was set to classify with an interval size of 2. The final step involved merging the raster slope layer with a raster generated from the mask of Wellington shire. This created a mosaic raster layer that shows elevation from <2 degrees to <26 degrees within Wellington shire.
 
-<img align="center" width="465" alt="image" src="https://user-images.githubusercontent.com/55724420/141418991-8f31b17c-d5ce-4869-b4da-de6a7bd40a42.png">
+<img align="center" width="660" alt="image" src="https://user-images.githubusercontent.com/55724420/141418991-8f31b17c-d5ce-4869-b4da-de6a7bd40a42.png">
 
   
 ## Calculation of Index <a name='index'></a>
