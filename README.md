@@ -1,6 +1,8 @@
 # Identification and Construction of Country Fire Authority (CFA) Branches for Effective Bushfire Management
 ## Table of Content
 
+The files required for the completion of this projects are too large to be included in this repository, nevertheless the sources are listed and referenced throughout the document.
+
 1. [Description](#desc)
 
 2. [Proposal](#main)
@@ -36,15 +38,15 @@ Bushfires are a natural phenomenon in Australia, particularly in its south-easte
 
 The shire of Wellington, located to the west of Gippsland and south of Alpine and Mansfield shires in Victoria, is the chosen municipal area to address these concerns. Many of the existing fire stations in Wellington shire are unevenly distributed. This is largely due to a lack of road networks, inaccessibility, and extreme climatic conditions of the Victorian High Country, which is situated in the most northerly area of the shire. The main motivation for the present project is to identify potential areas for new fire stations in the municipality of Wellington shire.
 
-The definition of bushfire fighting, as stated by Australia’s Department of Agriculture Water and Environment in its procedures of bushfire management and national environment law, is to prevent bushfires from damaging the environment, life, or property (Department of Agriculture, Water and Environment, n.d.). Typically, in bushfire prone areas the mobility is more limited than in urban areas, the topography is diverse, and, most importantly, the preservation of the environment is key.
+The definition of bushfire fighting, as stated by Australia’s Department of Agriculture Water and Environment in its procedures of bushfire management and national environment law, is to prevent bushfires from damaging the environment, life, or property (Department of Agriculture, Water and Environment, n.d.). 
 
 ## Proposal <a name='main'></a>
 
 The approach used in this study corresponds to a location-based deterministic model informed by static variables that do not vary over time or from one incident to another. Location modeling approaches maximise the response time given to a defined demand of population centers and the supply of facilities. As such, the model’s final output is a raster map built with the variations of an index of service coverage. This index will be expressed as a raster value product of a mathematical integration of the data at hand.
 
-The proposed index measures the level of coverage of the service provided by CFA in Wellington Shire. From the dataset previously introduced and their individual processing, out of the 8 raster variables, 7 of them are negatively correlated or, in other words, they represent an obstacle to the act of providing service to a given area. The remaining variable, service area, is the simplest definition of the coverage, thus the final index will combine the influence of the said obstacles over the degree of coverage established by the service area. Intuitively, an area that was barely reached under the constraints of CFA’s response protocols could be considered out-of-reach as the tree density, slope or any of the other deterrents erode the coverage of the service area.
+The proposed index measures the level of coverage of the service provided by CFA in Wellington Shire. From the dataset previously introduced and their individual processing, out of the 8 raster variables, 7 of them are negatively correlated or, in other words, they represent an obstacle to the act of providing service to a given area. The remaining variable, service area, is the simplest definition of the coverage, thus the final index will combine the influence of said obstacles over the degree of coverage established by the service area. Intuitively, an area that was barely reached under the constraints of CFA’s response protocols could be considered out-of-reach as the tree density, slope or any of the other deterrents erode the coverage of the service area.
 
-Having all 8 variables converted to a raster format, the next stage involved merging the maps into a single layer with index values as rasters. The present study approaches this integration moment under the same principle of linear regression. This model is often referred to as a weighted sum of all the variables involved in the estimation of an unknown number or label, here only one of the variables has a weight different from 1.
+Having all 8 variables converted to a raster format, the next stage involves merging the maps into a single layer with index values as rasters. The present project approaches this integration step following the same principle of linear regression. This model is often referred to as a weighted sum of all the variables in order to estimate an unknown variable. Herein only one of the variables has a weight different from 1.
 
 ## Data <a name='prep'></a>
 
@@ -55,13 +57,11 @@ The present project uses different layers of data made available by the Departme
 
 ### Response Time <a name='RT'></a>
 
-A key intuitive element to define an index of service coverage is the ability of the Country Fire Authority (CFA) to provide their services to as much area as possible within the territory of Wellington Shire. Given that the objective is to construct a static raster-based index, the first step is to obtain polygons which show the reach of CFA in a specific time response. For this calculation, two variables are considered: the location of CFA fire stations and the network of roads within Wellington Shire.
+A key intuitive element to define an index of service coverage is the ability of the Country Fire Authority (CFA) to provide their services to as large an area as possible within the territory of Wellington Shire. Given that the objective is to construct a static raster-based index, the first step is to obtain polygons which show the reach of each CFA station in regards to a specific time response. For this calculation, two variables are considered: the location of CFA fire stations and the network of roads within Wellington Shire.
 
-The dataset for CFA stations in Victoria is a point map. It contains all 1,200 fire stations scattered across the state from which 257 correspond to Wellington Shire. The CFA fire stations found in Wellington are predominantly located at the southern end of the region. This is due to the largely inaccessible terrain of the Great Dividing Range, or Victorian high country, characterised by dense vegetation, steep slopes, and severe weather (Lunt et al., 2010).
+The dataset for CFA stations in Victoria is a point map. It contains all 1,200 fire stations scattered across the state, out of which 257 correspond to Wellington Shire. The CFA fire stations found in Wellington are predominantly located at the southern end of the shire. This is due to the largely inaccessible terrain of the Great Dividing Range, or Victorian high country, characterised by dense vegetation, steep slopes, and severe weather (Lunt et al., 2010).
 
  <img align="center" width="660" alt="image" src="https://user-images.githubusercontent.com/55724420/141416550-55752f28-19b8-40c4-98d7-98a44a39b441.png">
-
-Service areas are obtained with ArGIS Pro's Service Area Tool which creates polygons that cover roads within the cutoff distance and the areas completely surrounded by reached roads. In order to set a correct cutoff distance, the present study considers the average speed limit in the state of Victoria of 50km/h and the additional margin of up to 20km/h on the top of the speed limit conceded to CFA vehicles under emergencies by the Road Safety Road Rules 2017. The time response, the average speed limit, and the special considerations for CFA vehicles make the cutoff distance for serviced areas 17 km. In this section, there is no contemplation of transit or any probability distribution linked to the flow of vehicles in the road network.
 
 Service areas are obtained with ArGIS Pro's Service Area Tool which creates polygons that cover roads within the cutoff distance and the areas completely surrounded by reached roads. In order to set a correct cutoff distance, the present study considers the average speed limit in the state of Victoria of 50km/h and the additional margin of up to 20km/h on the top of the speed limit conceded to CFA vehicles under emergencies by the Road Safety Road Rules 2017. The time response, the average speed limit, and the special considerations for CFA vehicles make the cutoff distance for serviced areas 17 km. In this section, there is no contemplation of transit or any probability distribution linked to the flow of vehicles in the road network.
 
